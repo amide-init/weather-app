@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-info text-white">{{cityName}}</div>
+                <div class="card-body" *ngIf="data">
+                    <table class="w-100">
+                        <tr>
+                            <td>Weather</td>
+                            <th><img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png"></th>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <th>{{data.sys.country}}</th>
+                        </tr>
+                        <tr>
+                            <td>Pressure</td>
+                            <th>{{data.main.pressure}}</th>
+                        </tr>
+                        <tr>
+                            <td>Latitude</td>
+                            <th>{{data.coord.lat}}</th>
+                        </tr>
+                        <tr>
+                            <td>Longitude</td>
+                            <th>{{data.coord.lon}}</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-body" *ngIf="!data">
+                    Loading ...
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text"  [(ngModel)]="search" class="form-control">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-outline-danger btn-block" (click)="fetchInfo()">Fetch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
