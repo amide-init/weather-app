@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 ## UI 
 
-![alt text](https://github.com/amide-inc/weather-app/blob/master/readme/cover.png?raw=true)
+![Weather App](https://github.com/amide-inc/weather-app/blob/master/readme/cover.png?raw=true)
 
 ## Development server
 
