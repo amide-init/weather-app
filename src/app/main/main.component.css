@@ -1,0 +1,9 @@
+th {
+    text-align: right;
+    
+}
+td {
+    color: darkslategrey;
+    font-weight: bold;
+    padding: 10px;
+}

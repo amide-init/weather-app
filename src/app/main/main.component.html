@@ -1,8 +1,8 @@
 <div class="container mt-5">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-8">
             <div class="card shadow-lg">
-                <div class="card-header bg-info text-white">{{cityName}}</div>
+                <div class="card-header bg-info text-white h3">{{cityName}}</div>
                 <div class="card-body" *ngIf="data">
                     <table class="w-100">
                         <tr>
@@ -15,7 +15,15 @@
                         </tr>
                         <tr>
                             <td>Pressure</td>
-                            <th>{{data.main.pressure}}</th>
+                            <th>{{data.main.pressure}} HPA</th>
+                        </tr>
+                        <tr>
+                            <td>Temp</td>
+                            <th>{{(data.main.temp -273).toFixed(2)}} Celsius</th>
+                        </tr>
+                        <tr>
+                            <td>Humidity</td>
+                            <th>{{data.main.humidity}}%</th>
                         </tr>
                         <tr>
                             <td>Latitude</td>
@@ -33,14 +41,17 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-8">
-                            <input type="text"  [(ngModel)]="search" class="form-control">
+                            <input type="text" placeholder="Write City Name here"  [(ngModel)]="search" class="form-control">
                         </div>
                         <div class="col-4">
-                            <button class="btn btn-outline-danger btn-block" (click)="fetchInfo()">Fetch</button>
+                            <button class="btn btn-primary btn-block" (click)="fetchInfo()">Fetch</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-4">
+            <div #mapContainer id="map"></div>
         </div>
     </div>
 </div>
